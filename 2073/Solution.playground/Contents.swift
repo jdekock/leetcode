@@ -8,11 +8,7 @@ class Solution {
         var time = 0
         
         for i in 0..<tickets.count {
-            if tickets[i] >= tickets[k] {
-                time += i <= k ? tickets[k] : (tickets[k] - 1)
-            } else {
-                time += tickets[i]
-            }
+            time += min((i <= k ? tickets[k] : (tickets[k] - 1)), tickets[i])
         }
    
         return time
